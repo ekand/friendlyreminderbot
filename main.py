@@ -8,13 +8,12 @@ import tweepy
 # Loading twitter credentials
 consumer_key, consumer_secret, access_token, access_token_secret = load_twitter_env()
 
-# Authenticate to Twitter using Tweepy
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-
-# Connect to the TWITTER API
-client = tweepy.Client(auth)
-
+# Connect to the TWITTER Client
+client = tweepy.Client(bearer_token='enter-token',
+                       consumer_key=consumer_key, 
+                       consumer_secret=consumer_secret, 
+                       access_token=access_token, 
+                       access_token_secret=access_token_secret)
 def reminder():
    while True:
      with open('reminders.txt') as f: lines = f.readlines()
