@@ -13,7 +13,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 # Connect to the TWITTER API
-api = tweepy.Client(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
+api = tweepy.Client(auth)
 
 def reminder():
    while True:
