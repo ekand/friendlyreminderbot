@@ -13,7 +13,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 # Connect to the TWITTER API
-api = tweepy.Client(auth)
+client = tweepy.Client(auth)
 
 def reminder():
    while True:
@@ -25,7 +25,7 @@ def reminder():
      remind = line.strip()
     
      # Random reminder tweets 
-     api.update_status(status=remind)
+     client.create_tweet(text=remind)
      # sleeps for 4 hours
      sleep(14400)
 
