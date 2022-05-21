@@ -24,7 +24,8 @@ def reminder():
      remind = line.strip()
     
      # Random reminder tweets 
-     client.create_tweet(text=remind)
+     # client.create_tweet(text=remind)
+     print(remind)
      # sleeps for 4 hours
      sleep(14400)
 
